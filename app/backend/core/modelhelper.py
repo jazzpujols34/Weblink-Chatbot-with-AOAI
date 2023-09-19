@@ -11,12 +11,12 @@ MODELS_2_TOKEN_LIMITS = {
     "gpt-4-32k": 32000,
 }
 
-AOAI_2_OAI = {"gpt-35-turbo": "gpt-3.5-turbo", "gpt-35-turbo-16k": "gpt-3.5-turbo-16k"}
+AOAI_2_OAI = {"gpt-4-32k": "gpt-4-32k"}
 
 
 def get_token_limit(model_id: str) -> int:
     if model_id not in MODELS_2_TOKEN_LIMITS:
-        raise ValueError("Expected model gpt-35-turbo and above")
+        raise ValueError("Expected model gpt-4-32k and above")
     return MODELS_2_TOKEN_LIMITS[model_id]
 
 
@@ -30,7 +30,7 @@ def num_tokens_from_messages(message: dict[str, str], model: str) -> int:
         int: The total number of tokens required to encode the message.
     Example:
         message = {'role': 'user', 'content': 'Hello, how are you?'}
-        model = 'gpt-3.5-turbo'
+        model = 'gpt-4-32k'
         num_tokens_from_messages(message, model)
         output: 11
     """

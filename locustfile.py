@@ -18,10 +18,10 @@ class ChatUser(HttpUser):
                     {
                         "user": random.choice(
                             [
-                                "What is included in my Northwind Health Plus plan that is not in standard?",
-                                "What does a Product Manager do?",
-                                "What happens in a performance review?",
-                                "Whats your whistleblower policy?",
+                                "展碁國際的負責人是?",
+                                "展碁國際的公司願景?",
+                                "展碁國際的資訊",
+                                "展碁國際的福利有哪些?",
                             ]
                         )
                     }

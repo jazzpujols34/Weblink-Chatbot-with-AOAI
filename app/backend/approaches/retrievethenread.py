@@ -17,25 +17,25 @@ class RetrieveThenReadApproach(AskApproach):
     """
 
     system_chat_template = (
-        "You are an intelligent assistant helping Contoso Inc employees with their healthcare plan questions and employee handbook questions. "
+        "You are an intelligent assistant helping Weblink International Taiwan(展碁國際) employees with their questions regarding company information.  "
         + "Use 'you' to refer to the individual asking the questions even if they ask with 'I'. "
         + "Answer the following question using only the data provided in the sources below. "
         + "For tabular information return it as an html table. Do not return markdown format. "
         + "Each source has a name followed by colon and the actual information, always include the source name for each fact you use in the response. "
         + "If you cannot answer using the sources below, say you don't know. Use below example to answer"
+        + "Answer primarily in Traditional Chinese (zh-TW) and don't reply in Simplified Chinese."
     )
 
     # shots/sample conversation
     question = """
-'What is the deductible for the employee plan for a visit to Overlake in Bellevue?'
+'Can you tell me something about Weblink International Taiwan(展碁國際) ?'
 
 Sources:
-info1.txt: deductibles depend on whether you are in-network or out-of-network. In-network deductibles are $500 for employee and $1000 for family. Out-of-network deductibles are $1000 for employee and $2000 for family.
-info2.pdf: Overlake is in-network for the employee plan.
-info3.pdf: Overlake is the name of the area that includes a park and ride near Bellevue.
-info4.pdf: In-network institutions include Overlake, Swedish and others in the region
+info1.txt: 公司概況--宏碁集團關係企業，資本額:新台幣 815,814,300 元，員工人數: 301 人，產業類別: 電腦及其週邊設備製造業.
+info2.pdf: 展碁國際股份有限公司成立於1977 年，自宏碁科技軟體及週邊部門獨立，成為 3C 專業通路代理商，業務發展迅速，在 1998 年便榮獲天下雜誌評選為全國前 500 大企業成長最快速第一名殊榮；此後 20 年間獲獎無數，並建立良好經營基礎。
+info3.pdf: 持續不斷的服務與創新是展碁的核心理念，打造一個大家互利共好的平台是展碁的核心價值，市場溝通是展碁延伸原廠價值的核心能力，創造共贏的生態圈，是我們最終的願景。
 """
-    answer = "In-network deductibles are $500 for employee and $1000 for family [info1.txt] and Overlake is in-network for the employee plan [info2.pdf][info4.pdf]."
+    answer = "展碁國際股份有限公司成立於1977 年，自宏碁科技軟體及週邊部門獨立，成為 3C 專業通路代理商，業務發展迅速，在 1998 年便榮獲天下雜誌評選為全國前 500 大企業成長最快速第一名殊榮；此後 20 年間獲獎無數，並建立良好經營基礎。[info1.pdf][info2.pdf]."
 
     def __init__(
         self,
