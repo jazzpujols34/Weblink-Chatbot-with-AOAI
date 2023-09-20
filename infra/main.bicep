@@ -55,11 +55,11 @@ param formRecognizerResourceGroupLocation string = location
 param formRecognizerSkuName string = 'S0'
 
 param chatGptDeploymentName string // Set in main.parameters.json
-param chatGptDeploymentCapacity int = 30
-param chatGptModelName string = (openAiHost == 'azure') ? 'gpt-4-32k' : 'gpt-4-32k'
+param chatGptDeploymentCapacity int = 20
+param chatGptModelName string = (openAiHost == 'azure') ? 'gpt-4' : 'gpt-4'
 param chatGptModelVersion string = '0613'
 param embeddingDeploymentName string = 'embedding'
-param embeddingDeploymentCapacity int = 30
+param embeddingDeploymentCapacity int = 20
 param embeddingModelName string = 'text-embedding-ada-002'
 
 @description('Id of the user or app to assign application roles')

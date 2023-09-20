@@ -11,12 +11,12 @@ MODELS_2_TOKEN_LIMITS = {
     "gpt-4-32k": 32000,
 }
 
-AOAI_2_OAI = {"gpt-4-32k": "gpt-4-32k"}
+AOAI_2_OAI = {"gpt-4": "gpt-4","gpt-4-32k": "gpt-4-32k"}
 
 
 def get_token_limit(model_id: str) -> int:
     if model_id not in MODELS_2_TOKEN_LIMITS:
-        raise ValueError("Expected model gpt-4-32k and above")
+        raise ValueError("Expected model gpt-4 and above")
     return MODELS_2_TOKEN_LIMITS[model_id]
 
 
